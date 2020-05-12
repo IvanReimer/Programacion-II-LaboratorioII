@@ -25,9 +25,8 @@ namespace Entidades
         /// <param name="marca">Marca del automovil</param>
         /// <param name="chasis">Chasis del automovil</param>
         /// <param name="color">Color del automovil</param>
-        public Automovil(EMarca marca, string chasis, ConsoleColor color) : base(marca, chasis, color)
+        public Automovil(EMarca marca, string chasis, ConsoleColor color) : this(marca, chasis, color,ETipo.Monovolumen)
         {
-            this.tipo = ETipo.Monovolumen;
         }
         /// <summary>
         /// Se le agrega constructor con parámetro tipo para poder settearlo mejor.
@@ -36,7 +35,7 @@ namespace Entidades
         /// <param name="chasis">Chasis del automovil</param>
         /// <param name="color">Color del automovil</param>
         /// <param name="tipo">Tipo del automovil</param>
-        public Automovil(EMarca marca, string chasis, ConsoleColor color, ETipo tipo) : this(marca, chasis, color)
+        public Automovil(EMarca marca, string chasis, ConsoleColor color, ETipo tipo) : base(marca, chasis, color)
         {
             this.tipo = tipo;
         }

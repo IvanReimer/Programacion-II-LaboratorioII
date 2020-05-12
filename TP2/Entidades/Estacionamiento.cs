@@ -64,7 +64,30 @@ namespace Entidades
             sb.AppendLine("");
             foreach (Vehiculo v in c.vehiculos)
             {
-                sb.AppendLine(v.Mostrar());
+                switch (tipo)
+                {
+                    case ETipo.Camioneta:
+                        if (v is Camioneta)
+                        {
+                            sb.AppendLine(v.Mostrar());
+                        }
+                        break;
+                    case ETipo.Moto:
+                        if (v is Moto)
+                        {
+                            sb.AppendLine(v.Mostrar());
+                        }
+                        break;
+                    case ETipo.Automovil:
+                        if (v is Automovil)
+                        {
+                            sb.AppendLine(v.Mostrar());
+                        }
+                        break;
+                    default:
+                        sb.AppendLine(v.Mostrar());
+                        break;
+                }
             }
             return sb.ToString();
         }
